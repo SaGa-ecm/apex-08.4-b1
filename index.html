@@ -357,7 +357,7 @@ class DriveInput{
 }
 
 const TrackDrive=(()=>{
- const limits=[50,90,130,170,210],scale=2,redline=6200,R=.535;
+ const limits=[50,90,130,170,210],scale=1,redline=6200,R=.535;
  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),mix=(a,b,t)=>a+(b-a)*t,blend=(k,dt)=>1-Math.exp(-k*dt);
  const ratios=limits.map(k=>redline/((k/3.6)/(2*Math.PI*R)*60)/3.9);
  const initial=()=>({x:0,z:0,yaw:0,u:0,v:0,r:0,steer:0,steerHold:0,steerDirection:0,throttle:0,brake:0,ax:0,ay:0,rpm:900,gear:1,angle:0,shift:0,lock:0,reverseHold:0,wx:0,wz:0,actual:0});
